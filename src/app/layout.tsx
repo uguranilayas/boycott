@@ -20,9 +20,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.className}>
       <StyledComponentsRegistry>
         <body>
-          <Layout>
-            <main>{children}</main>
-          </Layout>
+          <main>{children}</main>
         </body>
       </StyledComponentsRegistry>
     </html>

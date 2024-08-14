@@ -5,14 +5,16 @@ import GlobalStyle from "@/styles/globalStyles";
 // import Footer from '../Footer'
 
 type Props = PropsWithChildren<{
-  variant?: "default" | "login";
+  isHome?: boolean;
+  title?: string;
+  backRoute?: string;
 }>;
 
-const Layout: React.FC<Props> = ({ children, variant }) => {
+const Layout: React.FC<Props> = ({ children, isHome, title, backRoute }) => {
   return (
     <>
       <GlobalStyle />
-      <Header />
+      <Header isHome={isHome} title={title} backRoute={backRoute} />
       {children}
       {/* <Footer /> */}
     </>

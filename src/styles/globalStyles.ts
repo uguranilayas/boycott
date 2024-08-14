@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    color: ${colors.white};
   }
 
   em {

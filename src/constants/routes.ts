@@ -1,6 +1,6 @@
 const routes = {
   index: "/",
-  faq: "/faq",
+  barcodeInfo: "/barcode-info",
 };
 
 export { routes };
