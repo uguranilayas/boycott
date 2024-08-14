@@ -4,9 +4,8 @@ import styled, { css } from "styled-components";
 // Heading 1
 
 export const H1Styles = css`
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 700;
-  line-height: normal;
 `;
 
 export const H1 = styled.h1`
@@ -53,6 +52,11 @@ export const H4 = styled.h4`
   ${H4Styles};
 `;
 
+export const H4Bold = styled.h4`
+  ${H4Styles};
+  font-weight: 700;
+`;
+
 // Heading 5
 
 export const H5Styles = css`
@@ -87,7 +91,7 @@ export const P1Bold = styled.p`
 export const P2Styles = css`
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 125%;
 `;
 
 export const P2 = styled.p`

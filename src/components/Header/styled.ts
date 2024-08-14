@@ -1,10 +1,12 @@
 import { colors } from "@/styles";
 import styled from "styled-components";
-
-export const HeaderWrap = styled.div`
+export const HeaderWrap = styled.div<{ isHome?: boolean }>`
   background-color: ${colors.grey};
   padding: 32px 30px;
+  display: ${({ isHome }) => (isHome ? "none;" : "block")};
+`;
 
+export const HeaderItemsWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
