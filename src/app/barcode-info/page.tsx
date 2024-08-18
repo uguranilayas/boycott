@@ -13,8 +13,6 @@ import NotFound from "@/components/Containers/NotFound/page";
 
 import * as S from "./styled";
 
-type Props = PropsWithChildren<{}>;
-
 const SearchBarcode = (passedBarcode: string | undefined | null) => {
   console.log("-------------------REFRESHED-------------------");
 
@@ -84,7 +82,7 @@ const SearchBarcode = (passedBarcode: string | undefined | null) => {
   console.log(leftDatabaseBarcodes, "end result");
 };
 
-const BarcodeInfo: React.FC<Props> = ({}) => {
+const BarcodeInfo: React.FC = () => {
   const getFirmObject = (Result: number | undefined | null) => {
     if (Result) {
       const ObjectFound = Database.find(
