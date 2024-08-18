@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 import Link from "next/link";
-import { colors, fontFamily, media } from "@/styles";
+import { colors } from "@/styles";
 import { ButtonVariantType } from ".";
-import { P2Styles } from "../Typography";
 
 export const BaseButtonStyles = css`
   display: flex;
@@ -15,9 +14,9 @@ export const BaseButtonStyles = css`
   line-height: 20px; /* 71.429% */
   letter-spacing: -0.23px;
   border-radius: 10px;
-
   transition: all 200ms linear;
   transition-property: color, background;
+  min-height: 100px;
 
   cursor: pointer;
 
@@ -70,14 +69,8 @@ export const ButtonStyles = css<ButtonProps>`
 
   ${({ variant }) => {
     switch (variant) {
-      case "gradient":
-        return GradientButtonStyles;
-
       case "blue":
         return BlueButtonStyles;
-
-      case "outlined":
-        return OutlinedButtonStyles;
 
       default:
         return GradientButtonStyles;
@@ -85,7 +78,6 @@ export const ButtonStyles = css<ButtonProps>`
   }}
 
   ${({ fullWidth }) => (fullWidth ? "flex: 1;" : null)};
-  ${({ fullWidth }) => (fullWidth ? "width: 100%;" : null)};
 
   justify-content: center;
   align-items: center;
@@ -115,4 +107,8 @@ export const Button = styled.button<ButtonProps>`
 export const ButtonLink = styled(Link)<ButtonProps>`
   ${ButtonStyles};
   text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
 `;

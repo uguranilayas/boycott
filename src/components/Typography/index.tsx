@@ -15,9 +15,9 @@ export const H1 = styled.h1`
 // Heading 2
 
 export const H2Styles = css`
-  font-size: 48px;
+  font-size: 40px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 20px; /* 41.667% */
   letter-spacing: -0.23px;
 `;

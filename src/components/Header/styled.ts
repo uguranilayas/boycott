@@ -1,5 +1,6 @@
-import { colors } from "@/styles";
 import styled from "styled-components";
+import { colors } from "@/styles";
+
 export const HeaderWrap = styled.div<{ isHome?: boolean }>`
   background-color: ${colors.grey};
   padding: 32px 30px;
@@ -21,6 +22,8 @@ export const HeaderItemsWrap = styled.div`
   }
 
   svg {
+    cursor: pointer;
+
     width: 32px;
     height: 32px;
 
