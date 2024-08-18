@@ -105,6 +105,7 @@ const BarcodeInfo: React.FC<Props> = ({}) => {
   const FirmObject = getFirmObject(Result);
 
   return (
+     <Suspense>
     <Layout title="Ürün Bilgisi">
       <Container maxWidth="sm">
         {FirmObject ? (
@@ -138,6 +139,7 @@ const BarcodeInfo: React.FC<Props> = ({}) => {
         )}
       </Container>
     </Layout>
+     </Suspense>
   );
 };
 
