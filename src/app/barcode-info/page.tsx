@@ -7,9 +7,9 @@ import { Box, Container } from "@mui/material";
 import Button from "@/components/Button";
 import { publicImages } from "@/static";
 import { useSearchParams } from "next/navigation";
-import CompanyInfo from "./company-info/page";
+import CompanyInfo from "@/components/Containers/CompanyInfo/page";
 import { Database } from "./data";
-import NotFound from "./not-found/page";
+import NotFound from "@/components/Containers/NotFound/page";
 
 import * as S from "./styled";
 
