@@ -12,7 +12,7 @@ type Props = PropsWithChildren<{
 const Layout: React.FC<Props> = ({ children, isHome, title }) => {
   return (
     <>
-      <GlobalStyle />
+      
       <Header isHome={isHome} title={title} />
       {children}
       {/* <Footer /> */}

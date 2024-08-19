@@ -1,6 +1,6 @@
 "use client";
 
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, Suspense } from "react";
 
 import Layout from "@/components/Layout";
 import { Box, Container } from "@mui/material";
@@ -24,7 +24,7 @@ const SearchBarcode = (passedBarcode: string | undefined | null) => {
 
   const passedBarcodeToDigits = Array.from(String(passedBarcode), Number); // Turn barcode into digits array
 
-  let leftDatabaseBarcodes = allDatabaseBarcodes; // First passedBarcodeToDigits contains all db, it will decrease in the loop and will have a final value either one or zero
+  let leftDatabaseBarcodes = allDatabaseBarcodes; // First leftDatabaseBarcodes contains all db, it will decrease in the loop and will have a final value either one or zero
   for (
     let firstIndex = 2;
     firstIndex < passedBarcodeToDigits.length;
@@ -82,7 +82,7 @@ const SearchBarcode = (passedBarcode: string | undefined | null) => {
   console.log(leftDatabaseBarcodes, "end result");
 };
 
-const BarcodeInfo: React.FC = () => {
+export default function BarcodeInfo() {
   const getFirmObject = (Result: number | undefined | null) => {
     if (Result) {
       const ObjectFound = Database.find(
@@ -103,40 +103,40 @@ const BarcodeInfo: React.FC = () => {
   const FirmObject = getFirmObject(Result);
 
   return (
-    <Layout title="Ürün Bilgisi">
-      <Container maxWidth="sm">
-        {FirmObject ? (
-          <>
-            <CompanyInfo
-              barcodeNumber={barcodeUrl}
-              producer={FirmObject?.producer}
-              manufacturedCountry={FirmObject?.manufacturedCountry}
-              origin={FirmObject?.origin}
-              isForeign={FirmObject?.isForeign}
-              isBoycott={FirmObject?.isBoycott}
-              productDesc={FirmObject?.productDesc}
-            />
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "16px",
-                marginTop: "16px",
-              }}
-            >
-              <Button variant="blue">
-                <img src={publicImages.barcodeButtonIcon} alt="" />
-                BAŞKA ÜRÜN OKUT
-              </Button>
-              <img src={publicImages.barcodeInputExample} alt="" />
-            </Box>
-          </>
-        ) : (
-          <NotFound />
-        )}
-      </Container>
-    </Layout>
+    <Suspense>
+      <Layout title="Ürün Bilgisi">
+        <Container maxWidth="sm">
+          {FirmObject ? (
+            <>
+              <CompanyInfo
+                barcodeNumber={barcodeUrl}
+                producer={FirmObject?.producer}
+                manufacturedCountry={FirmObject?.manufacturedCountry}
+                origin={FirmObject?.origin}
+                isForeign={FirmObject?.isForeign}
+                isBoycott={FirmObject?.isBoycott}
+                productDesc={FirmObject?.productDesc}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "16px",
+                  marginTop: "16px",
+                }}
+              >
+                <Button variant="blue">
+                  <img src={publicImages.barcodeButtonIcon} alt="" />
+                  BAŞKA ÜRÜN OKUT
+                </Button>
+                <img src={publicImages.barcodeInputExample} alt="" />
+              </Box>
+            </>
+          ) : (
+            <NotFound />
+          )}
+        </Container>
+      </Layout>
+    </Suspense>
   );
-};
-
-export default BarcodeInfo;
+}
