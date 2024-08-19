@@ -2,7 +2,7 @@ import React from "react";
 
 import * as S from "./styled";
 
-export type ButtonVariantType = "gradient" | "blue" | "outlined";
+export type ButtonVariantType = "blue";
 
 type ButtonBaseProps = {
   variant?: ButtonVariantType;
@@ -26,7 +26,7 @@ const Button: React.FC<Props> = ({
 };
 
 type ButtonLinkProps = ButtonBaseProps &
-  Omit<React.ComponentProps<typeof S.ButtonLink>, "$buttonSize">;
+  React.ComponentProps<typeof S.ButtonLink>;
 
 const ButtonLink: React.FC<ButtonLinkProps> = ({ ...props }) => {
   return <S.ButtonLink {...props} />;

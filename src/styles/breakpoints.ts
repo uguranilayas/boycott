@@ -4,6 +4,6 @@ const breakpoints = {
   md: 900,
   lg: 1200,
   xl: 1536,
-}
+};
 
-export { breakpoints }
+export { breakpoints };

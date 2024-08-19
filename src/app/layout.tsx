@@ -1,8 +1,8 @@
 "use client";
 
-import Layout from "@/components/Layout";
 import StyledComponentsRegistry from "./registery";
 import { Poppins } from "next/font/google";
+import GlobalStyle from "@/styles/globalStyles";
 
 const poppins = Poppins({
   weight: ["400", "500", "700", "900"],
@@ -18,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.className}>
+      <GlobalStyle />
       <StyledComponentsRegistry>
         <body>
           <main>{children}</main>
