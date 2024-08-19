@@ -11,8 +11,6 @@ import CompanyInfo from "@/components/Containers/CompanyInfo/page";
 import { Database } from "./data";
 import NotFound from "@/components/Containers/NotFound/page";
 
-import * as S from "./styled";
-
 const SearchBarcode = (passedBarcode: string | undefined | null) => {
   console.log("-------------------REFRESHED-------------------");
 
